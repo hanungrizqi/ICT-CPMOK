@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DB_MOK">
+  <DataContextMoniker Name="/DB_MOKDataContext" />
+  <nestedChildShapes>
+    <classShape Id="e6e3d26b-0090-4d78-8093-86d3363e2902" isExpanded="false" absoluteBounds="6.875, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/DB_MOKDataContext/VW_KARYAWAN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0e6e20b5-b0b8-4564-ac71-bb27d7b92740" absoluteBounds="6.8900000000000006, 0.96, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="778f4bff-79ac-4034-bc41-851116a87254" isExpanded="false" absoluteBounds="6.875, 2, 2, 0.45">
+      <DataClassMoniker Name="/DB_MOKDataContext/VW_MENU" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ef7ec89e-2a0b-4590-ac47-0fd958e7b946" absoluteBounds="6.89, 2.46, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="19f4d837-a2ba-4286-8895-eff06ca7e92b" isExpanded="false" absoluteBounds="6.875, 1.5, 2, 0.45">
+      <DataClassMoniker Name="/DB_MOKDataContext/VW_DISTRIK" />
+      <nestedChildShapes>
+        <elementListCompartment Id="abcf253b-faef-4fbf-a55c-23fe51203503" absoluteBounds="6.89, 1.96, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e3882836-52be-45bc-a736-89f29d6b7dd3" isExpanded="false" absoluteBounds="0.5, 1, 2, 0.45">
+      <DataClassMoniker Name="/DB_MOKDataContext/TBL_M_MENU_GROUPING" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e35a4834-61fe-4b84-8bdd-cc8d185f3e21" absoluteBounds="0.51500000000000012, 1.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="757c33c9-6cc0-4694-bab2-4b8887618284" isExpanded="false" absoluteBounds="0.5, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/DB_MOKDataContext/TBL_M_GROUP_PERMISION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3bab8280-9ff5-4bb5-a88f-83117eb0f43d" absoluteBounds="0.51499999999999968, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3f78b716-fae9-480a-8bf8-b4a4dba14275" isExpanded="false" absoluteBounds="2.625, 1, 2, 0.45">
+      <DataClassMoniker Name="/DB_MOKDataContext/TBL_R_MENU" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3bc81b61-6433-454d-b066-1d6d6fdcf8a1" absoluteBounds="2.6399999999999997, 1.46, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3c4e3810-0f12-4660-82f9-ef3073800b4a" isExpanded="false" absoluteBounds="4.75, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/DB_MOKDataContext/TBL_T_ANNOUNCEMENT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="75f5a352-2a75-434f-960c-65835f710b95" absoluteBounds="4.765, 0.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9f639e17-3581-4c86-80ae-34013ec4bb3a" isExpanded="false" absoluteBounds="0.5, 1.5, 2, 0.45">
+      <DataClassMoniker Name="/DB_MOKDataContext/TBL_M_APP_VERSION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="466b0f9e-e6f6-4227-9a24-c8f166490e4b" absoluteBounds="0.51499999999999968, 1.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cbdf5958-fae4-44b9-8e43-d47456ca8a77" isExpanded="false" absoluteBounds="2.625, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/DB_MOKDataContext/TBL_R_USER_PHONE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="06a315b8-cd88-4882-94a9-b30faaee7684" absoluteBounds="2.64, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b64eba8c-20bf-4b67-9643-82f973cab80e" isExpanded="false" absoluteBounds="0.5, 2, 2, 0.45">
+      <DataClassMoniker Name="/DB_MOKDataContext/TBL_M_KARYAWAN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="369fbdd3-7c92-41d6-8acd-babaef824e29" absoluteBounds="0.51500000000000012, 2.46, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0f1f1603-72fd-4e59-a378-4a9b297d5fdb" isExpanded="false" absoluteBounds="4.75, 1, 2, 0.45">
+      <DataClassMoniker Name="/DB_MOKDataContext/TBL_T_NOTIFICATIONS_ON_DEMAND" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b6ac724b-86d4-4e89-9209-a2bf6db57819" absoluteBounds="4.765, 1.46, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="573494a1-a6a9-4150-bdd7-79badf8aa928" isExpanded="false" absoluteBounds="6.875, 2.5, 2, 0.45">
+      <DataClassMoniker Name="/DB_MOKDataContext/VW_RECIPIENT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="59980eb0-c6cd-43ec-9e41-a9cc7494a48a" absoluteBounds="6.89, 2.96, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="09a77234-d27f-4274-8305-ad4c8c01c437" isExpanded="false" absoluteBounds="6.875, 1, 2, 0.45">
+      <DataClassMoniker Name="/DB_MOKDataContext/VW_LOG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d711964e-8922-49a7-8b89-a63a82bdfd9e" absoluteBounds="6.89, 1.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,115 @@
+﻿@{
+    ViewBag.Title = "Push Notification";
+}
+
+<style>
+    .custom-dropdown {
+        width: 350px;
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
+
+<h2 class="title" id="section-announcement">Push Notification</h2>
+<h5 class="sub-title">Home / Push Notification</h5>
+
+<main style="margin-top: 30px" id="content">
+    <div class="row">
+        <div class="col-12">
+            <div class="card recent-sales overflow-auto">
+                <div class="card-body">
+                    @*<h5 class="card-title mb-3">Data Detachment <span> <a href="/location/add" class="btn btn-primary
+                        float-end">Add</a></span></h5>*@
+                    <div class="mb-3 pt-4">
+                        <h5 class="color-primary fw-bolder" style="border-bottom: 1px solid #b1b1b1;">
+                            Insert Your Data
+                        </h5>
+
+                        <div class="form mt-4 d-flex justify-content-start align-items-start">
+                            <table class="table table-borderless">
+                                <tbody class="">
+                                    <tr class="mb-4">
+                                        <th scope="row" style="width: 140px; font-size: 16px;">Notification Type</th>
+                                        <td>
+                                            <select class="form-select " name="" id="type-announcement" onchange="handleNotificationTypeChange()">
+                                                <option value="nones" selected>Choose Notification Type</option>
+                                                <option value="DISTRICT">DISTRICT</option>
+                                                <option value="NRP">NRP</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="mb-4">
+                                        <th scope="row" style="width: 140px; font-size: 16px;">Title</th>
+                                        <td>
+                                            <input type="text" class="form-control" id="title-notif"
+                                                   placeholder="input title of notification">
+                                        </td>
+                                    </tr>
+                                    <tr class="mb-4">
+                                        <th scope="row" style="width: 169px; font-size: 16px;">Body</th>
+                                        <td>
+                                            <textarea name="body" id="body-notif" cols="32" rows="5"></textarea>
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                                <tbody class="" id="site-row" style="display:none;">
+                                    <tr class="mb-4">
+                                        <th scope="row" style="width: 140px; font-size: 16px;">Site</th>
+                                        <td>
+                                            <select class="form-select get-list-district custom-dropdown" name="" id="district">
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                                <tbody class="" id="nrp-row" style="display:none;">
+                                    <tr class="mb-4">
+                                        <th scope="row" style="width: 140px; font-size: 16px;">NRP</th>
+                                        <td>
+                                            <select class="form-select get-list-nrp custom-dropdown" name="" id="nrp" multiple="multiple">
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <!-- Hidden rows -->
+                            <table class="table table-borderless">
+                                
+
+                                <tbody class="">
+                                    <tr class="mb-4">
+                                        <th scope="row" style="width: 140px; font-size: 16px;">Terget</th>
+                                        <td>
+                                            <input type="text" class="form-control" id="target">
+                                        </td>
+                                    </tr>
+                                    <tr class="mb-4">
+                                        <th scope="row" style="width: 140px; font-size: 16px;">EventID</th>
+                                        <td>
+                                            <input type="text" class="form-control" id="eventid">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <button id="btn-submit-announcement" class="btn btn-primary w-100 mb-2"
+                                onclick="Submit()">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+@section scripts {
+    <script src="~/Scripts/Helpers/Helpers.js"></script>
+    <script src="~/Scripts/PushNotification/PushNotification.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+}

@@ -1,0 +1,170 @@
+﻿@{
+    ViewBag.Title = "Manage Announcement";
+}
+
+<h2 class="title" id="section-announcement">Announcement</h2>
+<h5 class="sub-title">Home / Manage Announcement</h5>
+
+<main style="margin-top: 30px" id="content">
+    <div class="row">
+        <div class="col-12">
+            <div class="card recent-sales overflow-auto">
+                <div class="card-body">
+                    @*<h5 class="card-title mb-3">Data Detachment <span> <a href="/location/add" class="btn btn-primary
+                    float-end">Add</a></span></h5>*@
+                    <div class="mb-3 pt-4" style="border-bottom: 1px solid #b1b1b1;">
+                        <h5 class="color-primary fw-bolder" style="border-bottom: 1px solid #b1b1b1;">
+                            Data List Announcement
+                        </h5>
+
+                        <div class="form mt-4 d-flex justify-content-start align-items-start">
+                            <table class="table table-borderless">
+                                <tbody class="">
+                                    <input type="hidden" class="form-control" id="id-announcement">
+                                    <div>
+                                        <tr class="mb-4">
+                                            <th scope="row" style="width: 140px; font-size: 16px;">Title</th>
+                                            <td>
+                                                <input type="text" class="form-control" id="title-announcement"
+                                                    placeholder="input title of announcement">
+                                            </td>
+                                        </tr>
+
+                                        <tr class="mb-4">
+                                            <th scope="row" style="width: 169px; font-size: 16px;">Body</th>
+                                            <td>
+                                                <textarea name="body" id="body-announcement" cols="30" rows="5"
+                                                    placeholder="description of the announcement."></textarea>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="mb-4">
+                                            <th scope="row" style="width: 140px; font-size: 16px;">Order</th>
+                                            <td>
+                                                <input type="number" pattern="[0-9]+" class="form-control"
+                                                    id="order-announcement"
+                                                    placeholder="input order display announcement">
+                                            </td>
+                                        </tr>
+                                    </div>
+                                </tbody>
+                            </table>
+
+                            <table class="table table-borderless">
+                                <tbody class="">
+                                    <div>
+                                        <tr class="mb-4">
+                                            <th scope="row" style="width: 140px; font-size: 16px;">Type</th>
+                                            <td>
+                                                <select class="form-select " name="" id="type-announcement">
+                                                    <option value="text">text</option>
+                                                    <option value="image">image</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="mb-4">
+                                            <th scope="row" style="width: 140px; font-size: 16px;">Image URL</th>
+                                            <td>
+                                                <input type="file" class="form-control" id="announcement-file"
+                                                    placeholder="input name of group" accept="image/*">
+                                            </td>
+                                        </tr>
+
+                                        <tr class="mb-4">
+                                            <th scope="row" style="width: 140px; font-size: 16px;">Target URL</th>
+                                            <td>
+                                                <input type="text" class="form-control" id="target-url-announcement"
+                                                    placeholder="input target url of announcement">
+                                            </td>
+                                        </tr>
+
+
+                                    </div>
+                                </tbody>
+                            </table>
+
+                            <table class="table table-borderless">
+                                <tbody class="">
+                                    <tr class="mb-4">
+                                        <th scope="row" style="width: 140px; font-size: 16px;">Status</th>
+                                        <td>
+                                            <select class="form-select status-announcement" name=""
+                                                id="status-announcement">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="mb-4">
+                                        <th scope="row" style="width: 140px; font-size: 16px;">Location</th>
+                                        <td>
+                                            <select class="form-select get-list-district" name="" id="district">
+                                            </select>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <button id="btn-submit-announcement" class="btn btn-primary w-100 mb-2"
+                            onclick="handleSubmitannouncement()">
+                            Submit
+                        </button>
+                        <button id="btn-cancel-announcement" class="btn btn-secondary w-100"
+                            onclick="handleCancelEditannouncement()">
+                            Cancel Edit
+                        </button>
+                    </div>
+                    <div style="max-height: 740px; min-height: 740px; overflow: auto">
+                        <table id="table-announcement"
+                            class="table table-striped table-inverse table-responsive small ">
+                            <thead class="thead-inverse">
+                                <tr>
+                                    <th>ACTION</th>
+                                    <th>TITLE</th>
+                                    <th>BODY</th>
+                                    <th>ORDER</th>
+                                    <th>IMAGE URL</th>
+                                    <th>TARGET URL</th>
+                                    <th>TYPE</th>
+                                    <th>STATUS</th>
+                                    <th>LOCATION</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+<!-- Modal Preview Image -->
+<div class="modal fade" id="modalPreviewImage" tabindex="-1" aria-labelledby="modalPreviewImageLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold" id="modalPreviewImageLabel">Preview Image</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body  d-flex justify-content-center align-items-center">
+                <img id="preview-image" src="" alt="preview image" width="500px" height="500px">
+
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script src="~/Scripts/Helpers/Helpers.js"></script>
+    <script src="~/Scripts/announcement/announcement.js"></script>
+}

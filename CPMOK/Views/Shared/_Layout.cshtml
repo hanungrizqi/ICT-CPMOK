@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <link href="~/Content/img/favicon-KPP.ico" rel="icon">
+    @*<link href="~/Content/assets/img/apple-touch-icon.png" rel="apple-touch-icon">*@
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+    <link href="~/Content/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/assets/css/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/Content/assets/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/Content/assets/css/quill.snow.css" rel="stylesheet">
+    <link href="~/Content/assets/css/quill.bubble.css" rel="stylesheet">
+    <link href="~/Content/assets/css/remixicon.css" rel="stylesheet">
+    <link href="~/Content/assets/css/simple-datatables.css" rel="stylesheet">
+    <link href="~/Content/assets/css/style.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+
+    <link rel="stylesheet" href="~/Content/css/layoutCustom.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+        integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+        crossorigin="" />
+
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+        integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+        crossorigin=""></script>
+
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="~/Scripts/moment.min.js"></script>
+    @RenderSection("links", required: false)
+
+</head>
+
+<body style="background-color: #F1F6F2">
+    <header id="header" class="header fixed-top d-flex align-items-center">
+        <div class="d-flex align-items-center justify-content-between">
+            <a href="/" class="logo d-flex align-items-center">
+                <span class="d-none d-lg-block">
+                    CPMOK
+                </span>
+            </a>
+            <i class="fa-solid fa-bars  toggle-sidebar-btn"></i>
+        </div>
+
+        <nav class="header-nav ms-auto">
+            <ul class="d-flex align-items-center">
+                <li class="nav-item d-block d-lg-none"> <a class="nav-link nav-icon search-bar-toggle " href="#"> <i
+                            class="bi bi-search"></i> </a></li>
+
+                <li class="nav-item dropdown pe-3">
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                        <span class="d-none d-md-block dropdown-toggle ps-2"> @Session["name"]</span> </a>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                        <li> <a class="dropdown-item d-flex align-items-center" href="#" onclick="handleLogout()"> <i
+                                    class="bi bi-box-arrow-right"></i> <span>Sign Out</span> </a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <aside id="sidebar" class="sidebar">
+        <ul class="sidebar-nav" id="sidebar-nav">
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/">
+                    <i class="fa-solid fa-book"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/announcement">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    <span>Announcement</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/menu">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <span>Menu</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/appversion">
+                    <i class="fa-solid fa-diagram-project"></i>
+                    <span>App Version</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/log">
+                    <i class="fa-solid fa-arrow-up-a-z"></i>
+                    <span>Log</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/userphone">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>User's Phone Number</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/pushnotif">
+                    <i class="fa-solid fa-bell"></i>
+                    <span>Push Notification</span>
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <main id="main" class="main">
+        <div class="body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - PT. Kalimantan Prima Persada</p>
+            </footer>
+        </div>
+    </main>
+
+    @Scripts.Render("~/bundles/jquery")
+
+    <script type="text/javascript" charset="utf8"
+        src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+
+
+    <script src="~/Content/assets/js/apexcharts.min.js"></script>
+    <script src="~/Content/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/assets/js/chart.min.js"></script>
+    <script src="~/Content/assets/js/echarts.min.js"></script>
+    <script src="~/Content/assets/js/quill.min.js"></script>
+    <script src="~/Content/assets/js/simple-datatables.js"></script>
+    <script src="~/Content/assets/js/tinymce.min.js"></script>
+    <script src="~/Content/assets/js/validate.js"></script>
+    <script src="~/Content/assets/js/main.js"></script>
+
+    @RenderSection("scripts", required: false)
+
+
+    <script>
+        const handleLogout = () => {
+
+            $.ajax({
+                type: 'POST',
+                url: `/account/logout`,
+                contentType: 'application/json',
+                success: function (response) {
+                    if (response.Remarks === true) {
+                        window.location.href = '/'
+                    } else {
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    if (jqXHR.status === 400) {
+                        // Handle bad request (HTTP status code 400) here
+                        Toast.fire({
+                            icon: 'error',
+                            title: 'Bad Request: Your request is invalid.',
+                        })
+                    } else {
+                        // Handle other errors here
+                        Toast.fire({
+                            icon: 'error',
+                            title: 'An error occurred: ' + errorThrown,
+                        })
+                    }
+                }
+            })
+        }
+
+    </script>
+</body>
+
+</html>

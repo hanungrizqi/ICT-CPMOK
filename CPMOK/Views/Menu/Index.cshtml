@@ -1,0 +1,200 @@
+﻿@{
+    ViewBag.Title = "Manage Menu";
+}
+
+<h2 class="title" id="section-menu">Menu</h2>
+<h5 class="sub-title">Home / Manage Menu</h5>
+
+<main style="margin-top: 30px" id="content">
+    <div class="row">
+        <div class="col-12">
+            <div class="card recent-sales overflow-auto">
+                <div class="card-body">
+                    @*<h5 class="card-title mb-3">Data Detachment <span> <a href="/location/add" class="btn btn-primary
+                    float-end">Add</a></span></h5>*@
+                    <div class="mb-3 pt-4" style="border-bottom: 1px solid #b1b1b1;">
+                        <h5 class="color-primary fw-bolder" style="border-bottom: 1px solid #b1b1b1;">
+                            Data List Menu
+                        </h5>
+
+                        <div class="form mt-4 d-flex justify-content-start align-items-start">
+                            <table class="table table-borderless">
+                                <tbody class="">
+                                    <input type="hidden" class="form-control" id="id-menu">
+                                    <div>
+                                        <tr class="mb-4">
+                                            <th scope="row" style="width: 140px; font-size: 16px;">Menu</th>
+                                            <td>
+                                                <input type="text" class="form-control" id="name-menu"
+                                                    placeholder="input name of menu">
+                                            </td>
+                                        </tr>
+
+                                        <tr class="mb-4">
+                                            <th scope="row" style="width: 169px; font-size: 16px;">General App Link</th>
+                                            <td>
+                                                <input type="text" class="form-control" id="general-app-link"
+                                                    placeholder="input general app link">
+                                            </td>
+                                        </tr>
+
+                                        <tr class="mb-4">
+                                            <th scope="row" style="width: 140px; font-size: 16px;">General App ID</th>
+                                            <td>
+                                                <input type="text" class="form-control" id="general-app-id"
+                                                    placeholder="input general app ID">
+                                            </td>
+                                        </tr>
+
+                                        <tr class="mb-4">
+                                            <th scope="row" style="width: 140px; font-size: 16px;">IOS App Link</th>
+                                            <td>
+                                                <input type="text" class="form-control" id="ios-app-link"
+                                                    placeholder="input IOS App Link">
+                                            </td>
+                                        </tr>
+
+                                        <tr class="mb-4">
+                                            <th scope="row" style="width: 140px; font-size: 16px;">IOS App ID</th>
+                                            <td>
+                                                <input type="text" class="form-control" id="ios-app-id"
+                                                    placeholder="input IOS App ID">
+                                            </td>
+                                        </tr>
+                                    </div>
+                                </tbody>
+                            </table>
+
+                            <table class="table table-borderless">
+                                <tbody class="">
+                                    <div>
+                                        <tr class="mb-4">
+                                            <th scope="row" style="width: 140px; font-size: 16px;">Icon</th>
+                                            <td>
+                                                <input type="file" class="form-control" id="icon-file"
+                                                    placeholder="input name of group" accept="image/*">
+                                            </td>
+                                        </tr>
+
+                                        <tr class="mb-4">
+                                            <th scope="row" style="width: 140px; font-size: 16px;">District</th>
+                                            <td>
+                                                <select class="form-select get-list-district" name="" id="district">
+
+                                                </select>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="mb-4">
+                                            <th scope="row" style="width: 140px; font-size: 16px;">Default</th>
+                                            <td>
+                                                <input class="form-check-input" type="checkbox" value="" id="default" />
+                                            </td>
+                                        </tr>
+
+                                        <tr class="mb-4">
+                                            <th scope="row" style="width: 140px; font-size: 16px;">SSO</th>
+                                            <td>
+                                                <input class="form-check-input" type="checkbox" value="" id="sso" />
+                                            </td>
+                                        </tr>
+
+                                        <tr class="mb-4">
+                                            <th scope="row" style="width: 140px; font-size: 16px;">AVAILABLE</th>
+                                            <td>
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="available" />
+                                            </td>
+                                        </tr>
+                                    </div>
+                                </tbody>
+                            </table>
+
+                            <table class="table table-borderless">
+                                <tbody class="">
+                                    <div>
+                                        <tr class="mb-4">
+                                            <th scope="row" style="width: 140px; font-size: 16px;">DEPT Group</th>
+                                            <td>
+                                                <select class="form-select" name="" id="dept_group">
+
+                                                </select>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="mb-4">
+                                            <th scope="row" style="width: 140px; font-size: 16px;">ACL Group</th>
+                                            <td>
+                                                <select class="form-select" name="" id="acl_group">
+
+                                                </select>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="mb-4">
+                                            <th scope="row" style="width: 140px; font-size: 16px;">Download URL</th>
+                                            <td>
+                                                <input type="text" class="form-control" id="downloadUrl"
+                                                    placeholder="input download url">
+                                            </td>
+                                        </tr>
+                                    </div>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <button id="btn-submit-menu" class="btn btn-primary w-100 mb-2"
+                            onclick="handleSubmitMenu()">Submit</button>
+                        <button id="btn-cancel-menu" class="btn btn-secondary w-100"
+                            onclick="handleCancelEditMenu()">Cancel Edit</button>
+                    </div>
+                    <div style="max-height: 740px; min-height: 740px; overflow: auto">
+                        <table id="table-menu" class="table table-striped table-inverse table-responsive small ">
+                            <thead class="thead-inverse">
+                                <tr>
+                                    <th>ACTION</th>
+                                    <th>MENU</th>
+                                    <th style="width: 120px;">LINK</th>
+                                    <th>ICON</th>
+                                    <th>DISTRICT</th>
+                                    <th>DEFAULT</th>
+                                    <th>SSO</th>
+                                    <th>AVAILABLE</th>
+                                    <th>GROUP DEPT</th>
+                                    <th>GROUP ACL</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+<!-- Modal Preview Image -->
+<div class="modal fade" id="modalPreviewImage" tabindex="-1" aria-labelledby="modalPreviewImageLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold" id="modalPreviewImageLabel">Preview Image</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body  d-flex justify-content-center align-items-center">
+                <img id="preview-image" src="" alt="preview image" width="500px" height="500px">
+
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script src="~/Scripts/Helpers/Helpers.js"></script>
+    <script src="~/Scripts/Menu/Menu.js"></script>
+}

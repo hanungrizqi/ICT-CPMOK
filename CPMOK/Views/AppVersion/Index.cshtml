@@ -1,0 +1,113 @@
+﻿
+@{
+    ViewBag.Title = "App Version";
+}
+
+<h2 class="title" id="section-menu">App Version</h2>
+<h5 class="sub-title">Home / Manage App Version</h5>
+
+<main style="margin-top: 30px" id="content">
+    <div class="row">
+        <div class="col-12">
+            <div class="card recent-sales overflow-auto">
+                <div class="card-body">
+                    @*<h5 class="card-title mb-3">Data Detachment <span> <a href="/location/add" class="btn btn-primary
+                    float-end">Add</a></span></h5>*@
+                    <div class="mb-3 pt-4" style="border-bottom: 1px solid #b1b1b1;">
+                        <h5 class="color-primary fw-bolder" style="border-bottom: 1px solid #b1b1b1;">
+                            Data List App Version
+                        </h5>
+
+                        <div class="form mt-4 d-flex justify-content-start align-items-start">
+                            <table class="table table-borderless">
+                                <tbody class="">
+                                    <input type="hidden" class="form-control" id="id-version">
+                                    <div>
+                                        <tr class="mb-4">
+                                            <th scope="row" style="width: 140px; font-size: 16px;">Operating System</th>
+                                            <td>
+                                                <input type="text" class="form-control" id="operating-system"
+                                                    placeholder="input name of operating system">
+                                            </td>
+                                        </tr>
+                                    </div>
+                                </tbody>
+                            </table>
+
+                            <table class="table table-borderless">
+                                <tbody class="">
+                                    <div>
+                                        <tr class="mb-4">
+                                            <th scope="row" style="width: 140px; font-size: 16px;">App Version</th>
+                                            <td>
+                                                <input type="text" class="form-control" id="version"
+                                                    placeholder="input app version">
+                                            </td>
+                                        </tr>
+                                    </div>
+                                </tbody>
+                            </table>
+
+                            <table class="table table-borderless">
+                                <tbody class="">
+                                    <div>
+                                        <tr class="mb-4">
+                                            <th scope="row" style="width: 140px; font-size: 16px;">Release Date</th>
+                                            <td>
+                                                <input type="datetime-local" class="form-control" id="release-date">
+                                            </td>
+                                        </tr>
+                                    </div>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <button id="btn-submit-menu" class="btn btn-primary w-100 mb-2"
+                            onclick="handleSubmitMenu()">Submit</button>
+                        <button id="btn-cancel-menu" class="btn btn-secondary w-100"
+                            onclick="handleCancelEditMenu()">Cancel Edit</button>
+                    </div>
+                    <div style="max-height: 740px; min-height: 740px; overflow: auto">
+                        <table id="table-menu" class="table table-striped table-inverse table-responsive small ">
+                            <thead class="thead-inverse">
+                                <tr>
+                                    <th>ACTION</th>
+                                    <th>OPERATING SYSTEM</th>
+                                    <th>APP VERSION</th>
+                                    <th>RELEASE DATE</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+<!-- Modal Preview Image -->
+<div class="modal fade" id="modalPreviewImage" tabindex="-1" aria-labelledby="modalPreviewImageLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold" id="modalPreviewImageLabel">Preview Image</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body  d-flex justify-content-center align-items-center">
+                <img id="preview-image" src="" alt="preview image" width="500px" height="500px">
+
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script src="~/Scripts/Helpers/Helpers.js"></script>
+    <script src="~/Scripts/AppVersion/Version.js"></script>
+}

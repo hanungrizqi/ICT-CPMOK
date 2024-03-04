@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DB_ICT_mOK_KPP" Class="DB_MOKDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=LSNRDWH.KPPMINING.NET;Initial Catalog=DB_ICT_mOK_KPP;User ID=sqlservices" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DB_ICT_mOK_KPDConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.VW_KARYAWAN" Member="VW_KARYAWANs">
+    <Type Name="VW_KARYAWAN">
+      <Column Name="EMPLOYEE_ID" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(43)" CanBeNull="true" />
+      <Column Name="BIRTH_DATE" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="STATUS_EMPLOYEE" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="hire_date" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="END_KONTRAK_1" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="END_KONTRAK_2" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="GRADE" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="POS_TITLE" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="DEPT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SITE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="POSITION_ID" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_MENU" Member="VW_MENUs">
+    <Type Name="VW_MENU">
+      <Column Name="MENU_PID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="MENU_DESC" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="MENU_LINK" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="MENU_LINK_IOS" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="MENU_ICON" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="DISTRICT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IS_DEFAULT" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IS_SSO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="androidAppId" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="iosAppId" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="downloadUrl" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="GROUP_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GROUPING" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="IS_AVAILABLE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ACL_GROUP_NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DEPT_GROUP_NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_DISTRIK" Member="VW_DISTRIKs">
+    <Type Name="VW_DISTRIK">
+      <Column Name="DSTRCT_CODE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_M_MENU_GROUPING" Member="TBL_M_MENU_GROUPINGs">
+    <Type Name="TBL_M_MENU_GROUPING">
+      <Column Name="ID_GROUP" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NAMA_GROUP" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_M_GROUP_PERMISION" Member="TBL_M_GROUP_PERMISIONs">
+    <Type Name="TBL_M_GROUP_PERMISION">
+      <Column Name="GROUP_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GROUP_NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_R_MENU" Member="TBL_R_MENUs">
+    <Type Name="TBL_R_MENU">
+      <Column Name="MENU_PID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MENU_DESC" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="MENU_LINK" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="MENU_LINK_IOS" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="MENU_ICON" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="DISTRICT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IS_DEFAULT" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IS_SSO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="androidAppId" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="iosAppId" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="downloadUrl" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="GROUP_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GROUPING" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="IS_AVAILABLE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_T_ANNOUNCEMENT" Member="TBL_T_ANNOUNCEMENTs">
+    <Type Name="TBL_T_ANNOUNCEMENT">
+      <Column Name="id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="body" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="[order]" Member="order" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="imageUrl" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="targetUrl" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="location" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_M_APP_VERSION" Member="TBL_M_APP_VERSIONs">
+    <Type Name="TBL_M_APP_VERSION">
+      <Column Name="os_name" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="app_version" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="release_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="link_gdrive" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="link_playstore" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_R_USER_PHONE" Member="TBL_R_USER_PHONEs">
+    <Type Name="TBL_R_USER_PHONE">
+      <Column Name="nrp" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="phoneNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_M_KARYAWAN" Member="TBL_M_KARYAWANs">
+    <Type Name="TBL_M_KARYAWAN">
+      <Column Name="EMPLOYEE_ID" Type="System.String" DbType="NVarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(43)" CanBeNull="true" />
+      <Column Name="BIRTH_DATE" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="STATUS_EMPLOYEE" Type="System.String" DbType="NVarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="hire_date" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="END_KONTRAK_1" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="END_KONTRAK_2" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="GRADE" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="POS_TITLE" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="DEPT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SITE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="POSITION_ID" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="NIK" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_T_NOTIFICATIONS_ON_DEMAND" Member="TBL_T_NOTIFICATIONS_ON_DEMANDs">
+    <Type Name="TBL_T_NOTIFICATIONS_ON_DEMAND">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="recipient" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="sound" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="body" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="target" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="date_sent" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="date_create" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="remarks" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="event_id" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_RECIPIENTS" Member="VW_RECIPIENTs">
+    <Type Name="VW_RECIPIENT">
+      <Column Name="username" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="expiredDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="otp" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="token" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="device_id" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="SITE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(43)" CanBeNull="true" />
+      <Column Name="GRADE" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="GENDER_CODE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="GENDER_DESC" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="MARITAL_STATUS" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="MARITAL_STATUS_DESC" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="POS_TITLE" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="DEPT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_LOGS" Member="VW_LOGs">
+    <Type Name="VW_LOG">
+      <Column Name="headerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="device_id" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="os_name" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="token" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="actionAPI" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="remarks" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="insertDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AppVersion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.cusp_insertDataPushNotifByNRP" Method="cusp_insertDataPushNotifByNRP">
+    <Parameter Name="NRP" Parameter="nRP" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="TITLE" Parameter="tITLE" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="BODY" Parameter="bODY" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="TARGET" Parameter="tARGET" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="EVENTID" Parameter="eVENTID" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
